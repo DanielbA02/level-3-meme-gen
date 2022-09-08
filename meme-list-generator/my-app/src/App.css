@@ -35,10 +35,7 @@ main {
   font-weight: 500;
 }
 
-
-
 .form {
-  
   display: grid;
   grid-template: 40px 40px / 1fr 1fr;
   gap: 17px;
@@ -46,7 +43,6 @@ main {
 }
 
 .form--input {
-  
   font-family: "Karla", sans-serif;
   border-radius: 5px;
   border: 1px solid #D5D4D8;
@@ -64,7 +60,7 @@ main {
 }
 
 .meme {
-  position: ce;
+  position: center;
 }
 
 .meme--image {
@@ -136,7 +132,10 @@ main {
 }
 
 .btn {
-  width: 82%;
+  text-align: center;
+  width: 100%;
+  left: auto;
+  right: auto;
   height: 4rem;
   border-radius: 6px;
   border-style: none;
@@ -146,10 +145,7 @@ main {
   cursor: pointer;
 }
 
-
-  
-
 .list{
-
-display: flexbox;
+  display: flex;
+  position: center;
 }

@@ -21,7 +21,6 @@ export default function Meme() {
         randomImage: "" 
     }])
 
-    
     useEffect(() => {
         getData()
     }, [])
@@ -30,10 +29,7 @@ export default function Meme() {
         await fetch("https://api.imgflip.com/get_memes")
         .then(res => res.json())
         .then(data => setAllMemes(data.data.memes))
-        // console.log(allMemes)
     }
-    
-    
     
     function getMemeImage() {
         const randomNumber = Math.floor(Math.random() * allMemes.length)
@@ -41,11 +37,9 @@ export default function Meme() {
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
-        }))
-        
-        //Andrew
-    }
-    
+        }))}
+
+//Andrew
     function addText(event) {
         const {name, value} = event.target
         setMeme(prevText => ({
@@ -59,18 +53,14 @@ export default function Meme() {
         console.log(meme)
         setMemeList(prevMemesList => {
             return [ ...prevMemesList,
-                    meme ]
+                    meme]
         })  
     }
-    
-  
-   
+
     const delMeme = (index) => setMemeList(memeList.filter((_, i) => i !== index))
-    
 
     const memesListElements = memeList.map((meme,index) => {
     return <MemeList key = {index} {...meme} onDelete={() => delMeme(index)}/>})
-    
     return (
         <main>
             <div className="form">
@@ -96,18 +86,16 @@ export default function Meme() {
                 </button>
             </div>
 
-            <div className="meme">
-                <img src={meme.randomImage} className="meme--image" />
-                <h2 className="memeTextTop">{meme.topText}</h2>
-                <h2 className="memeTextBottom">{meme.bottomText}</h2>
+                <div className="meme">
+                    <img src={meme.randomImage} className="meme--image" />
+                    <h2 className="memeTextTop">{meme.topText}</h2>
+                    <h2 className="memeTextBottom">{meme.bottomText}</h2>
 
-                <div className ="save">
-                <button className="btn"  onClick={handleSave}> Add Meme To Your List </button>
-                {memesListElements}
-                </div>
-                
+                    <div className ="save">
+                    <button className="btn"  onClick={handleSave}> Add Meme To Your List </button>
+                    {memesListElements}
+                </div>   
             </div>
-           
         </main>
     )
 }
