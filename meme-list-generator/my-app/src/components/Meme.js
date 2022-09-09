@@ -6,19 +6,22 @@ export default function Meme() {
     const [meme, setMeme] = useState({
         topText: "",
         bottomText: "",
-        randomImage: "http://i.imgflip.com/1bij.jpg" 
+        randomImage: "http://i.imgflip.com/1bij.jpg" ,
+        memeHere: false
     })
 
     const [allMemes, setAllMemes] = useState([{
         topText:meme.topText,
         bottomText:meme.bottomText,
-        randomImage:meme.randomImage
+        randomImage:meme.randomImage,
+        memeHere: false,
     }])
 
     const [memeList, setMemeList] = useState([{
         topText: "",
         bottomText: "",
-        randomImage: "" 
+        randomImage: "",
+        memeHere: false
     }])
 
     useEffect(() => {
@@ -36,7 +39,8 @@ export default function Meme() {
         const url = allMemes[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
-            randomImage: url
+            randomImage: url,
+            memeHere: true
         }))}
 
 //Andrew
@@ -87,7 +91,7 @@ export default function Meme() {
             </div>
 
                 <div className="meme">
-                    <img src={meme.randomImage} className="meme--image" />
+                    <img src={meme.randomImage} alt="" className="meme--image" />
                     <h2 className="memeTextTop">{meme.topText}</h2>
                     <h2 className="memeTextBottom">{meme.bottomText}</h2>
 
