@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react"
 import MemeList from "./MemeList"
-
+//banana
 // Brock
 export default function Meme() {
     const [meme, setMeme] = useState({
         topText: "",
         bottomText: "",
         randomImage: "http://i.imgflip.com/1bij.jpg" ,
-        memeHere: false
+        memeHere: true
     })
 
     const [allMemes, setAllMemes] = useState([{
@@ -17,12 +17,7 @@ export default function Meme() {
         memeHere: false,
     }])
 
-    const [memeList, setMemeList] = useState([{
-        topText: "",
-        bottomText: "",
-        randomImage: "",
-        memeHere: false
-    }])
+    const [memeList, setMemeList] = useState([])
 
     useEffect(() => {
         getData()
@@ -54,7 +49,7 @@ export default function Meme() {
 
     function handleSave(event) {
         event.preventDefault()
-        console.log(meme)
+        console.log("item to save:", meme)
         setMemeList(prevMemesList => {
             return [ ...prevMemesList,
                     meme]
@@ -94,11 +89,10 @@ export default function Meme() {
                     <img src={meme.randomImage} alt="" className="meme--image" />
                     <h2 className="memeTextTop">{meme.topText}</h2>
                     <h2 className="memeTextBottom">{meme.bottomText}</h2>
-
-                    <div className ="save">
-                    <button className="btn"  onClick={handleSave}> Add Meme To Your List </button>
-                    {memesListElements}
                 </div>   
+                <div className ="save">
+                <button className="btn"  onClick={handleSave}> Add Meme To Your List </button>
+                {memesListElements}
             </div>
         </main>
     )
