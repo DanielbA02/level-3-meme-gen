@@ -61,7 +61,6 @@ main {
 
 .btn {
 
-  position: absolute; 
   text-align: center;
   width: 100%;
   height: 4rem;
@@ -88,33 +87,33 @@ main {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  padding-bottom: 20px;
 }
 
 .memeTextTop{
-  top: 0;
-  flex-wrap: wrap;
   position: absolute;
-  width: 80%;
-  text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 15px 0;
-  padding: 0 5px;
-  font-family: impact, sans-serif;
-  font-size: 2em;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 1px;
-  text-shadow:
-      2px 2px 0 #000,
-      -2px -2px 0 #000,
-      2px -2px 0 #000,
-      -2px 2px 0 #000,
-      0 2px 0 #000,
-      2px 0 0 #000,
-      0 -2px 0 #000,
-      -2px 0 0 #000,
-      2px 2px 5px #000;
+    width: 80%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    /* margin: 15px 0; */
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+  margin-top: -300px;
 }
 
 .memeTextBottom {
@@ -123,10 +122,10 @@ main {
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
-  margin: 15px 0;
+  /* margin: 15px 0; */
   padding: 0 5px;
   font-family: impact, sans-serif;
-  font-size: 2em;
+  font-size: 24px;
   text-transform: uppercase;
   color: white;
   letter-spacing: 1px;
@@ -140,6 +139,7 @@ main {
       0 -2px 0 #000,
       -2px 0 0 #000,
       2px 2px 5px #000;
+  margin-top: -100px;
 }
 
 
