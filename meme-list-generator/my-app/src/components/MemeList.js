@@ -40,17 +40,20 @@ export default function MemeList(props) {
     return ( 
         <div className="list">
         
-        {props.memeHere && <img className='MemeListImg' src={props.randomImage} alt=""/>}
+        <div className="meme">
 
-        {isSaved ? 
-        <h2 className="editListTop">{editList.editTopText}</h2> : 
-        <h2 className="memeListTextTop" >{props.topText}</h2>
-        }
+            {props.memeHere && <img className='MemeListImg' src={props.randomImage} alt=""/>}
 
-        {isSaved ? 
-        <h2 className="editListBottom">{editList.editBottomText}</h2> :
-        <h2 className="memeListTextBot">{props.bottomText}</h2>
-        }
+            {isSaved ? 
+            <h2 className="memeTextTop">{editList.editTopText}</h2> : 
+            <h2 className="memeTextTop" >{props.topText}</h2>
+            }
+
+            {isSaved ? 
+            <h2 className="memeTextBottom">{editList.editBottomText}</h2> :
+            <h2 className="memeTextBottom">{props.bottomText}</h2>
+            }
+        </div>
 
         <div className='buttons'>
         {props.memeHere && <button className='DelMemeBtn' onClick={props.onDelete}>Delete</button>}
